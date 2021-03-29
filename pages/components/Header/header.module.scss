@@ -1,0 +1,115 @@
+.header {
+    background-color: #1e51dd;
+    padding: 10px 20px;
+    @media (max-width: 480px) {
+      
+  }
+    color: white;}
+    .headerwrap {
+        margin: 0 auto;
+      max-width: 1148px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: 480px) {
+      flex-direction: column;
+  }}
+    .mobiwrap {
+        margin-right: auto;
+        @media (max-width: 480px) {
+            display: flex;
+            margin: 0; 
+            width: 100%;
+            align-items: center;           
+        }}
+        #navactive {
+          background: transparent;
+          &::before {
+            top: 0;
+            transform: rotate(135deg);
+          }
+          &::after {
+            top: 0;
+            transform: rotate(-135deg);
+          }
+         }
+        .hbmenu {
+            display: block;
+            width: 35px;
+            height: 30px;
+            display: block;
+            flex-direction: column;
+            %simphb {
+              width: 100%;
+                display: inline-block;
+                height: 3px;
+                background: #fff;
+            }             
+            .nav_icon {
+              transition: all .2s;
+                @extend %simphb;
+              position: relative;
+                &::before {
+                  top: -.6rem
+                }
+                &::after {
+                  top: .65rem
+                }
+                &::before, &::after {
+                  transition: all .2s;
+                  @extend %simphb;
+                  content: "";
+                  position: absolute;
+                  left: 0;
+                }
+                
+            }
+            @media (min-width: 480px) {
+                display: none;
+            }
+        }
+       
+  
+    .logo {
+      font-weight: 600;
+      font-size: 1.3rem;
+      @media (max-width: 480px) {
+        margin-right: auto;
+    }}
+    .topnav {
+      @media (max-width: 480px) {
+        display: none;
+        width: 100%;
+        text-align: center;
+      }
+      &.active {
+        display: block!important;
+      }
+      &_list {
+        display: flex;
+        padding: 0;
+        margin: 0;
+        @media (max-width: 480px) {
+          padding-top: 40px;
+          width: 100%;
+          flex-direction: column;
+        }
+      }
+      &_item {
+        list-style: none;
+      }
+      &_link {
+          padding: 5px 8px;
+        font-weight: 600;
+        display: inline-block;
+        @media (max-width: 480px) {
+          padding: 10px;
+          display: block;
+          margin-bottom: 10px;
+          border: 2px solid #9faccf;
+          
+        }
+      }
+    }
+  
+
