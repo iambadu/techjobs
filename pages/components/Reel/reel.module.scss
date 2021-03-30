@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+@import "../../../scss/rfs.scss";
+
+.imgwrap {
+  background: url("/img/jb_bg.jpg") center center no-repeat;
+  background-size: cover;
+  //    height: calc(100vh - 54px);
+  position: relative;
+  z-index: 100;
+  &::before {
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.5;
+    background: linear-gradient(45deg, #44074d, #2b064e);
+    position: absolute;
+  }
+}
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 100px 15px;
+  position: relative;
+  z-index: 200;
+}
+.reelwrp {
+  width: 70%;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+  z-index: 1000;
+}
+.title {
+  font-family: Poppins, serif;
+  font-weight: 600;
+  @include font-size(3rem);
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(10, 4, 3, 0.31);
+}
+.formwrp {
+    margin: 2rem 0 1rem 0;
+  border: 8px solid #fff;
+  border-radius: 5px;
+  background: #fff;
+  display: inline-flex;
+//   flex-wrap: wrap;
+  input[type="text"] {
+    font-size: inherit;
+    outline: 0;
+    margin-right: 10px;
+    border-radius: 5px;
+    font-family: inherit;
+    padding: 10px 20px;
+    padding-left: 40px;
+    border: none;
+    position: relative;
+    background-size: 1.3rem 1.3rem;
+    background-color: #e5e6e9;
+  }
+  .formjob {
+    background: url("/img/briefcase.svg") 5px 10px no-repeat;
+  }
+  .formloc {
+    background: url("/img/location.svg") 5px 10px no-repeat;
+  }
+  input[type="submit"] {
+      padding: 10px 25px;
+      font-weight: 600;
+      color: #fff;
+    font-size: inherit;
+    background: rgb(25, 185, 73);
+    border: none;
+    border-radius: 5px;
+    &:focus {
+        outline:none;
+    }
+}
+}

@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import Image from 'next/image';
 
 
 import scss from './header.module.scss';
@@ -6,6 +7,7 @@ import scss from './header.module.scss';
 function Header() {
     const [state, setState] = useState(false)
     return (
+        <>
         <header className={scss.header}>
             <div className={scss.headerwrap}>
                 <div className={scss.mobiwrap}>
@@ -28,6 +30,8 @@ function Header() {
                 </nav>
             </div>
         </header>
+        
+        </>
     )
 }
 
