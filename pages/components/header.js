@@ -1,8 +1,8 @@
 import {useState} from 'react';
-import Image from 'next/image';
+import Link from 'next/link';
 
 
-import scss from './header.module.scss';
+import scss from '../../scss/header.module.scss';
 
 function Header() {
     const [state, setState] = useState(false)
@@ -12,7 +12,9 @@ function Header() {
             <div className={scss.headerwrap}>
                 <div className={scss.mobiwrap}>
                     <div className={scss.logo}>
-                        techjobs
+                        <Link href="/">                       
+                       <a>techjobs</a> 
+                        </Link>
                     </div>
                     <div onClick={() => setState(!state)} className={scss.hbmenu}>                    
                         <div id = {state ? scss.navactive : ""} className={scss.nav_icon}></div>

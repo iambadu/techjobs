@@ -1,12 +1,12 @@
 import dynamic from 'next/dynamic';
 
-const Header = dynamic(() => import('./components/Header'));
-const Reel = dynamic(() => import('./components/Reel'));
+const Header = dynamic(() => import('./components/header'));
+const Reel = dynamic(() => import('./components/reel'));
 
 export default function Home() {
+ 
   return (
     <>
-      <Header/>
       <Reel/>
     </>
   )

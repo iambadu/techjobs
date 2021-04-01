@@ -1,7 +1,15 @@
-import '../scss/globals.css'
+import '../scss/globals.css';
+import Pagewrap from './components/_pagewrap';
+import { SearchWrap } from './components/context'
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+
+
+export default function Application({ Component, pageProps }) {
+  return (
+      <Pagewrap>
+        <Component {...pageProps} />
+      </Pagewrap>
+
+
+  )
 }
-
-export default MyApp

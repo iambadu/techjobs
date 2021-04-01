@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
-@import "../../../scss/rfs.scss";
+@import "./rfs.scss";
 
 .imgwrap {
+  height: 60vh;
   background: url("/img/jb_bg.jpg") center center no-repeat;
   background-size: cover;
   //    height: calc(100vh - 54px);
@@ -57,24 +57,34 @@
     border: none;
     position: relative;
     background-size: 1.3rem 1.3rem;
-    background-color: #e5e6e9;
+    background-color: #f4f4f5;
   }
   .formjob {
-    background: url("/img/briefcase.svg") 5px 10px no-repeat;
+    background: url("/img/briefcase.svg") 8px 10px no-repeat;
   }
   .formloc {
-    background: url("/img/location.svg") 5px 10px no-repeat;
+    background: url("/img/location.svg") 8px 10px no-repeat;
   }
   input[type="submit"] {
       padding: 10px 25px;
       font-weight: 600;
       color: #fff;
     font-size: inherit;
-    background: rgb(25, 185, 73);
+    background: #19b949;
     border: none;
     border-radius: 5px;
-    &:focus {
+    cursor: pointer;
+    &:focus, &:hover {
+      background: #148a37;
         outline:none;
     }
 }
+}
+.error {
+  background-color: #e61616;
+  display: inline-block;
+  padding: 8px 15px;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 5px;
 }
