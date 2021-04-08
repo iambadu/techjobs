@@ -1,15 +1,9 @@
 import '../scss/globals.css';
-import Pagewrap from './components/_pagewrap';
-import { SearchWrap } from './components/context'
+import Layout from '../components/Layout';
 
-
-
-export default function Application({ Component, pageProps }) {
+const Application = ({ Component, pageProps }) => {
   return (
-      <Pagewrap>
-        <Component {...pageProps} />
-      </Pagewrap>
-
-
+      <Component {...pageProps} />
   )
 }
+export default Application;

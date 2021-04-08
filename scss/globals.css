@@ -29,3 +29,22 @@ h6, h5, h4, h3, h2, h1 {
   font-weight: 500;
   line-height: 1.2;
 }
+
+.joblist {
+  padding-top: 60px;
+  background-color: #ededee;
+}
+.joblist-wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 18px;
+  display: flex;
+}
+.jobfilter {
+  width: 25%;
+}
+.jobresults {
+  padding: 0 10px;
+  width: 75%;
+  margin-left: 15px;
+}

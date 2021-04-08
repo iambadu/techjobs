@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import scss from "../../scss/reel.module.scss";
+import scss from "../scss/reel.module.scss";
 
 export default function Reel() {
   const [error, setError] = useState(false);
@@ -16,7 +16,7 @@ export default function Reel() {
   };
 
   return (
-    <main className="reel">
+    <article className="reel">
       <div className={scss.imgwrap}>
         <div className={scss.container}>
           <div className={scss.reelwrp}>
@@ -50,6 +50,6 @@ export default function Reel() {
           </div>
         </div>
       </div>
-    </main>
+    </article>
   );
 }

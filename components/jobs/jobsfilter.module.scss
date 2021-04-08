@@ -1,0 +1,19 @@
+.heading {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin: 5px;
+}
+.filterlist {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+.filteritem {
+    border: 2px solid #969696;
+    margin:5px 8px;
+    border-radius: 3px;
+    padding: 3px 8px;
+    margin-left: 0;
+}

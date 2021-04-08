@@ -2,7 +2,7 @@ import {useState} from 'react';
 import Link from 'next/link';
 
 
-import scss from '../../scss/header.module.scss';
+import scss from '../scss/header.module.scss';
 
 function Header() {
     const [state, setState] = useState(false)
