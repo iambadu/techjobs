@@ -8,7 +8,7 @@ export interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children, title }) => (
   <>
     <Head>
-      <title>Github | {title}</title>
+      <title>Github Jobs | {title}</title>
     </Head>
     <Header />
     <main>{children}</main>

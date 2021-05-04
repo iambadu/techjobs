@@ -21,7 +21,7 @@ export default async({body}: Request, res:Response) => {
     query += query.substring(1)
   }
   try {
-    const data = await fetch(`${JOBS_API}.json?$[query]`).then(json => json.json());
+    const data = await fetch(`${JOBS_API}.json?${query}`).then(json => json.json());
     res.status(200).json(data)
   } catch (err) {
     res.status(500).json({error: err})

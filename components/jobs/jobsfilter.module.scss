@@ -1,3 +1,6 @@
+.jobfilter {
+    margin-bottom: 30px;
+}
 .heading {
     text-transform: uppercase;
     font-weight: 600;
@@ -12,8 +15,20 @@
 }
 .filteritem {
     border: 2px solid #969696;
+    color: #5c5c5c;
     margin:5px 8px;
     border-radius: 3px;
-    padding: 3px 8px;
+    padding: 6px 8px;
     margin-left: 0;
+    font-size: .9rem;
+    font-weight: 600;
+    cursor: pointer;
+   &:hover {
+       background-color: var(--sec-color);
+       border-color: transparent;
+       color: #fff;
+   }
+    &:focus {
+        outline: 0;
+    }
 }
