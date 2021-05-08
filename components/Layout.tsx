@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Header from "./header.js";
+import Header from "./header";
 
 export interface LayoutProps {
   title: string;

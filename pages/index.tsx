@@ -1,87 +1,55 @@
-import { FormEvent, useState } from "react";
-import { JOBS_API, GithubJobs } from "../lib/api";
-
-import Reel from ".././components/Reel";
-import JobsItem from "../components/jobs/JobsItem";
+import { useState } from "react";
 import Layout from "../components/Layout";
-import JobsFilter from "../components/jobs/JobsFilter";
-import Loader from '../components/loader';
+import Footer from "./../components/footer";
+import Reel from "./../components/Reel";
+import Jobs from "./../components/Jobs";
+import useFetchData from "../utils/useFetchData";
+export default function Home({ initjobs }) {
+  const [jobs, setJobs] = useState(initjobs)
+  // const [params, setParams] = useState({});
+  // const [page, setPage] = useState(1);
+  // const { jobs, loading, error, hasNextPage } = useFetchData(params, page);
+  // console.log(jobs);
 
-interface HomeProps {
-  jobs: GithubJobs[];
+  return (
+    <div>
+      <Layout title="Find Your Dream Job">
+        <Reel />
+        <Jobs jobs={jobs} />f
+        <Footer />
+      </Layout>
+    </div>
+  );
 }
 
-const Home: React.VFC<HomeProps> = (props) => {
-  const [jobs, setJobs] = useState(props.jobs);
-  const [location, setLocation] = useState("");
-  const [term, setTerm] = useState("");
-  const [loading, setLoading] = useState(false);
+export async function getServerSideProps(context) {
+  console.log(context);
 
-  const handleSearch = (term?: string) => {
-    setLoading(true)
-    fetch("/api", {
-      method: "POST",
-      body: JSON.stringify({
-        location,
-        term,
-      }),
-    })
-    .then((data) => data.json())
-    .then(setJobs);
-    setLoading(() => false);
-    console.log(jobs);
+  const URL = "https://jobs.github.com/positions.json";
+  const data = await fetch(URL).then(res => res.json());
+
+  return {
+    props: {
+          initjobs: data
+    },
   };
- 
-  
-  
-  
-  return (
-    <Layout title="Find your dream job">
-      <Reel />
-      <div className="joblist">
-        <div className="joblist-wrap">
-          <div className="jobfilter">
-            <JobsFilter  type="jobs" 
-            setTerm = {setTerm}
-            setLocation = {setLocation}
-            handleSearch = {handleSearch}
-            />
-            <JobsFilter type="location"
-            setLocation = {setLocation}
-            setTerm = {setTerm}
-            handleSearch = {handleSearch}
-            />
-          </div>
-          <div className="jobresults">
-           {
-             !loading ?  (jobs.map((item) => (
-              <JobsItem key={item.id} {...item} />
-            )))
-             :
-             (<Loader/>)
-               
-            }
-          </div>
-        </div>
-      </div>
-    </Layout>
-  );
-};
+}
 
-export const getServerSideProps = async () => {
-  try {
-    const data = await fetch(`${JOBS_API}.json`).then((data) => data.json());
-    return {
-      props: {
-        jobs: data,
-      },
-    };
-  } catch (error) {
-    return {
-      props: {
-        jobs: [],
-      },
-    };
-  }
-};
-export default Home;
+// import axios from "axios";
+
+// const fetcher = (url) => axios.get(url).then((res) => res.data);
+
+// function App() {
+//   const { data, error } = useSWR("/api/data", fetcher);
+//   // ...
+// }
+
+// function useUser (id) {
+//   const { data, error } = useSWR(`/api/user/${id}`, fetcher)
+
+//   return {
+//     user: data,
+//     isLoading: !error && !data,
+//     isError: error
+//   }
+// }

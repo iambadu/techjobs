@@ -1,7 +1,8 @@
-import '../scss/globals.css';
-import Layout from '../components/Layout';
+import {AppProps} from 'next/app'
 
-const Application = ({ Component, pageProps }) => {
+import '../scss/globals.css';
+
+const Application = ({ Component, pageProps }:AppProps) => {
   return (
       <Component {...pageProps} />
   )

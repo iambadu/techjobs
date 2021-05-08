@@ -1,10 +1,10 @@
 @import "./rfs.scss";
 
 .imgwrap {
-  height: 60vh;
+  object-fit: cover;
   background: url("/img/jb_bg.jpg") center center no-repeat;
   background-size: cover;
-  //    height: calc(100vh - 54px);
+    //  height: calc(100vh - 54px);
   position: relative;
   z-index: 100;
   &::before {
@@ -21,12 +21,21 @@
 .container {
   max-width: 1180px;
   margin: 0 auto;
-  padding: 100px 15px;
+  padding: 0 15px;
   position: relative;
   z-index: 200;
 }
 .reelwrp {
-  width: 70%;
+  // padding: 50px 0;
+  // @media (min-width: 768px) {
+    padding: 15vh 0;
+  // }
+  width: 80%;
+  margin:auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   @media (max-width: 768px) {
     width: 100%;
   }
@@ -35,18 +44,32 @@
 .title {
   font-family: Poppins, serif;
   font-weight: 600;
-  @include font-size(3rem);
+  @include font-size(3.2rem);
   color: #fff;
   text-shadow: 2px 2px 4px rgba(10, 4, 3, 0.31);
 }
 .formwrp {
+  width:100%;
     margin: 2rem 0 1rem 0;
-  border: 8px solid #fff;
+  border: 7px solid #fff;
   border-radius: 5px;
   background: #fff;
-  display: inline-flex;
-//   flex-wrap: wrap;
+  display: flex;
+  flex-wrap: nowrap;
+
+  @media (max-width: 768px) {
+    padding: 5px;
+    flex-wrap: wrap;
+    input[type="submit"] {
+      width: 100%;
+    }
+    input[type="text"] {
+      margin: 0 0 10px 0!important ;
+    }
+  }
   input[type="text"] {
+    border: 1px solid #cecccc;
+    width:100%;
     font-size: inherit;
     outline: 0;
     margin-right: 10px;
@@ -54,10 +77,10 @@
     font-family: inherit;
     padding: 10px 20px;
     padding-left: 40px;
-    border: none;
+    // border: none;
     position: relative;
     background-size: 1.3rem 1.3rem;
-    background-color: #f4f4f5;
+    // background-color: #f3f3f5;
   }
   .formjob {
     background: url("/img/briefcase.svg") 8px 10px no-repeat;
@@ -66,7 +89,7 @@
     background: url("/img/location.svg") 8px 10px no-repeat;
   }
   input[type="submit"] {
-      padding: 10px 25px;
+      padding: 10px 32px;
       font-weight: 600;
       color: #fff;
     font-size: inherit;

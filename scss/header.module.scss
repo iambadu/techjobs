@@ -1,8 +1,8 @@
 .header {
-    background-color: #1e51dd;
+    background-color: darken(#1E3A8A, 16%);
     padding: 10px 20px;
     z-index: 100;
-    @media (max-width: 480px) {    
+    @media (max-width: 480px) {
   }
     color: white;}
     .headerwrap {
@@ -18,9 +18,9 @@
         margin-right: auto;
         @media (max-width: 480px) {
             display: flex;
-            margin: 0; 
+            margin: 0;
             width: 100%;
-            align-items: center;           
+            align-items: center;
         }}
         #navactive {
           background: transparent;
@@ -44,7 +44,7 @@
                 display: inline-block;
                 height: 3px;
                 background: #fff;
-            }             
+            }
             .nav_icon {
               transition: all .2s;
                 @extend %simphb;
@@ -62,12 +62,12 @@
                   position: absolute;
                   left: 0;
                 }
-                
+
             }
             @media (min-width: 480px) {
                 display: none;
             }
-        } 
+        }
     .logo {
       font-weight: 600;
       font-size: 1.3rem;
@@ -105,9 +105,9 @@
           display: block;
           margin-bottom: 10px;
           border: 2px solid #9faccf;
-          
+
         }
       }
     }
-  
+
 

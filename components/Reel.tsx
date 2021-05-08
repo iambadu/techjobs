@@ -6,15 +6,6 @@ export default function Reel() {
   let fInpjob = useRef(null);
   let fInploc = useRef(null);
 
-  const handleSubmit = (evt) => {
-    let floc = fInploc.current.value;
-    let fjob = fInpjob.current.value;
-    if (floc === "" && fjob === "") {
-      evt.preventDefault();
-      setError(true);
-    }
-  };
-
   return (
     <article className="reel">
       <div className={scss.imgwrap}>
@@ -23,7 +14,7 @@ export default function Reel() {
             <h1 className={scss.title}>
               Find the best tech job of your dreams that fits your life
             </h1>
-            <form onSubmit={handleSubmit} className={scss.formwrp}>
+            <form className={scss.formwrp}>
               <input
                 onFocus={() => setError(false)}
                 ref={fInpjob}
