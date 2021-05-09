@@ -1,10 +1,8 @@
 import { useRef, useState } from "react";
 import scss from "../scss/reel.module.scss";
 
-export default function Reel() {
-  const [error, setError] = useState(false);
-  let fInpjob = useRef(null);
-  let fInploc = useRef(null);
+export default function Reel({params, handleChange}) {
+
 
   return (
     <article className="reel">
@@ -16,16 +14,16 @@ export default function Reel() {
             </h1>
             <form className={scss.formwrp}>
               <input
-                onFocus={() => setError(false)}
-                ref={fInpjob}
-                name="job"
+                name="description"
+                onChange={handleChange}
+                value={params.description}
                 className={scss.formjob}
                 placeholder="Job title or keywords"
                 type="text"
-              />
+                />
               <input
-                onFocus={() => setError(false)}
-                ref={fInploc}
+                onChange={handleChange}
+                value={params.location}
                 name="location"
                 className={scss.formloc}
                 placeholder="Location"
@@ -33,11 +31,6 @@ export default function Reel() {
               />
               <input type="submit" value="Search" />
             </form>
-            {error && (
-              <div className={scss.error}>
-                You have to at least enter a job title or a location
-              </div>
-            )}
           </div>
         </div>
       </div>

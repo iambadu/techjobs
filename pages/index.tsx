@@ -4,36 +4,49 @@ import Footer from "./../components/footer";
 import Reel from "./../components/Reel";
 import Jobs from "./../components/Jobs";
 import useFetchData from "../utils/useFetchData";
-export default function Home({ initjobs }) {
-  const [jobs, setJobs] = useState(initjobs)
-  // const [params, setParams] = useState({});
-  // const [page, setPage] = useState(1);
-  // const { jobs, loading, error, hasNextPage } = useFetchData(params, page);
+export default function Home() {
+  // const [job, setJobs] = useState(initjobs)
+  const [params, setParams] = useState({});
+  const [page, setPage] = useState(1);
+  const { jobs, loading, error, hasNextPage } = useFetchData(params, page);
   // console.log(jobs);
-
+  function handleChange(e) {
+    let param = e.target.name;
+    let value = e.target.value;
+    setParams(prevState => {
+      return {...prevState, [param]:value}
+    } )
+}
   return (
     <div>
       <Layout title="Find Your Dream Job">
-        <Reel />
-        <Jobs jobs={jobs} />f
+        <Reel handleChange={handleChange} params={params} />
+        <Jobs
+          loading={loading}
+          job={jobs}
+          page={page}
+          setPage={setPage}
+          hasNextPage={hasNextPage}
+
+        />
         <Footer />
       </Layout>
     </div>
   );
 }
 
-export async function getServerSideProps(context) {
-  console.log(context);
+// export async function getServerSideProps(context) {
+//   console.log(context);
 
-  const URL = "https://jobs.github.com/positions.json";
-  const data = await fetch(URL).then(res => res.json());
+//   const URL = "https://jobs.github.com/positions.json";
+//   const data = await fetch(URL).then(res => res.json());
 
-  return {
-    props: {
-          initjobs: data
-    },
-  };
-}
+//   return {
+//     props: {
+//           initjobs: data
+//     },
+//   };
+// }
 
 // import axios from "axios";
 

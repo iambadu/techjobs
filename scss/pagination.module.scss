@@ -1,0 +1,30 @@
+.paginate {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+    li {
+        &:hover {
+            background-color: lighten(#047857, 30%);
+        }
+        &:last-of-type{
+         border-right: 2px solid #047857;
+        }
+        padding: 8px 14px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #5a5a5a;
+        font-size: 18px;
+        font-weight: bold;
+        display: inline-block;
+        border: 2px solid #047857;
+        border-right: none;
+    }
+    .active {
+        background: #047857;
+        color:#fff;
+    }
+}

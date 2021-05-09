@@ -29,7 +29,7 @@ function reducer(state, action) {
 }
 
 const URL =
-  'https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json';
+  "https://thingproxy.freeboard.io/fetch/https://jobs.github.com/positions.json";
 
 function useFetchData(params, page) {
   const [state, dispatch] = useReducer(reducer, { jobs: [], loading: true });
