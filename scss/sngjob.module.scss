@@ -1,0 +1,79 @@
+@import "./rfs.scss";
+
+.container {
+  max-width: 1180px;
+  margin: 15px auto;
+  padding: 0 15px;
+  z-index: 200;
+
+  background-color: #fff;
+  border-radius: 6px;
+}
+.topwrap {
+  width: 100%;
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+  @media (max-width: 640px) {
+      flex-direction: column-reverse;
+  }
+  .company {
+    font-weight: bold;
+    font-size: 14px;
+    color: #065f46;
+    padding: 7px 0;
+  }
+  .location {
+    font-size: 15px;
+    font-weight: bold;
+    color: #4b5563;
+    padding: 10px 0;
+  }
+  .date {
+      padding-left: 10px;
+  }
+  .type {
+    margin-left: 15px;
+    background-color: #4b5563;
+    color: #fff;
+    font-weight: normal;
+    padding: 3px 8px;
+    border-radius: 3px;
+  }
+  .toptext {
+      display: flex;
+      flex-direction: column;
+
+    }
+    img {
+        align-self: flex-start;
+        display: block;
+        padding:10px 0;
+        // margin-left: auto;
+        max-width: 200px;
+        object-fit: scale-down;
+    }
+    .title {
+        padding-top: 15px;
+        font-family: Poppins, sans-serif;
+        @include font-size(35px);
+    }
+}
+
+.jcontent {
+padding: 15px;
+}
+.apply {
+    padding-bottom: 15px;
+ a {
+    text-decoration: underline;
+    font-weight: bold;
+    color: #1a40bb;
+}
+}
+.jtitle {
+text-transform: uppercase;
+font-weight: bold;
+color: #424242;
+}

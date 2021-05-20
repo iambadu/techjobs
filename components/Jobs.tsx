@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import dayjs from "dayjs";
 import Datefmt from "dayjs/plugin/relativeTime";
-import Pagination from "./pagination";
+import Pagination from "./Pagination";
 
 const Jobs = ({ job, page, loading, hasNextPage, setPage }) => {
   dayjs.extend(Datefmt);
@@ -49,7 +49,7 @@ const Jobs = ({ job, page, loading, hasNextPage, setPage }) => {
                               />
                             </div>
                           </div>
-                          <Link href="/love">
+                          <Link href={`job/${item.id}`}>
                             <a className={scss.jobBtn}>View Job</a>
                           </Link>
                           <p className={scss.date}>

@@ -5,11 +5,10 @@ import Reel from "./../components/Reel";
 import Jobs from "./../components/Jobs";
 import useFetchData from "../utils/useFetchData";
 export default function Home() {
-  // const [job, setJobs] = useState(initjobs)
   const [params, setParams] = useState({});
   const [page, setPage] = useState(1);
   const { jobs, loading, error, hasNextPage } = useFetchData(params, page);
-  // console.log(jobs);
+  
   function handleChange(e) {
     let param = e.target.name;
     let value = e.target.value;
