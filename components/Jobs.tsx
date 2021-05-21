@@ -53,8 +53,7 @@ const Jobs = ({ job, page, loading, hasNextPage, setPage }) => {
                             <a className={scss.jobBtn}>View Job</a>
                           </Link>
                           <p className={scss.date}>
-                            Posted{" "}
-                            {dayjs().to(dayjs(`${item.created_at}`))}
+                            Posted {dayjs().to(dayjs(`${item.created_at}`))}
                           </p>
                         </span>
                       </div>
@@ -62,11 +61,11 @@ const Jobs = ({ job, page, loading, hasNextPage, setPage }) => {
                   })}
                 </div>
               </div>
-                  <Pagination
-                    page={page}
-                    setPage={setPage}
-                    hasNextPage={hasNextPage}
-                  />
+              <Pagination
+                page={page}
+                setPage={setPage}
+                hasNextPage={hasNextPage}
+              />
             </>
           )}
         </div>

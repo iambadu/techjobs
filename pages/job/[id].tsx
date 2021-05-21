@@ -5,7 +5,7 @@ import dayjs from "dayjs";
 import Datefmt from "dayjs/plugin/relativeTime";
 import Footer from "../../components/footer";
 import scss from "../../scss/sngjob.module.scss";
-import ReactMarkdown from 'react-markdown';
+import ReactMarkdown from "react-markdown";
 
 export default function SingleJob({ job, redirect }) {
   dayjs.extend(Datefmt);
@@ -35,18 +35,17 @@ export default function SingleJob({ job, redirect }) {
               </p>
             </div>
             <img src={job.company_logo} alt="" />
-                  </div>
-                  <div className={scss.jcontent}>
-                      <div className={scss.apply}>
-                          <p className={scss.jtitle}>How to apply</p>
-                          <div dangerouslySetInnerHTML={{__html: job.how_to_apply}}></div>
-
-                      </div>
-                      <div className="jdesc">
-                          <p className={scss.jtitle}>Job Description</p>
-                          <div dangerouslySetInnerHTML={{__html: job.description}}></div>
-                      </div>
-                   </div>
+          </div>
+          <div className={scss.jcontent}>
+            <div className={scss.apply}>
+              <p className={scss.jtitle}>How to apply</p>
+              <div dangerouslySetInnerHTML={{ __html: job.how_to_apply }}></div>
+            </div>
+            <div className="jdesc">
+              <p className={scss.jtitle}>Job Description</p>
+              <div dangerouslySetInnerHTML={{ __html: job.description }}></div>
+            </div>
+          </div>
         </div>
         <Footer />
       </Layout>
