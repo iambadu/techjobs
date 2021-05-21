@@ -30,7 +30,7 @@ export default function SingleJob({ job, redirect }) {
               <p className={scss.location}>
                 <span>{job.location}</span> -
                 <span className={scss.date}>
-                  Posted {dayjs().to(dayjs(`${job.created_at}`, true))}
+                  Posted {dayjs().to(dayjs(`${job.created_at}`))}
                 </span>
               </p>
             </div>

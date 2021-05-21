@@ -54,7 +54,7 @@ const Jobs = ({ job, page, loading, hasNextPage, setPage }) => {
                           </Link>
                           <p className={scss.date}>
                             Posted{" "}
-                            {dayjs().to(dayjs(`${item.created_at}`, true))}
+                            {dayjs().to(dayjs(`${item.created_at}`))}
                           </p>
                         </span>
                       </div>
