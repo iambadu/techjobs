@@ -28,7 +28,8 @@ function reducer(state, action) {
   }
 }
 
-const URL = "https://jobs.github.com/positions.json";
+const URL =
+  "https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json";
 
 function useFetchData(params, page) {
   const [state, dispatch] = useReducer(reducer, { jobs: [], loading: true });
