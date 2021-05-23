@@ -28,18 +28,24 @@ function reducer(state, action) {
   }
 }
 
-const URL =
-  "https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json";
+const URL = "https://cors.bridged.cc/https://jobs.github.com/positions.json";
 
 function useFetchData(params, page) {
   const [state, dispatch] = useReducer(reducer, { jobs: [], loading: true });
 
   useEffect(() => {
     const cancelToken1 = axios.CancelToken.source();
-    axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+    axios.defaults.headers.post["Content-Type"] =
+      "application/x-www-form-urlencoded";
     dispatch({ type: ACTIONS.MAKE_REQUEST });
     axios
       .get(URL, {
+        headers: {
+          "crossorigin": true,
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods":"GET,PUT,POST,DELETE,PATCH,OPTIONS",
+          "Access-Control-Allow-Credentials": true,
+        },
         cancelToken: cancelToken1.token,
         params: { markdown: true, page: page, ...params },
       })
@@ -54,6 +60,12 @@ function useFetchData(params, page) {
     const cancelToken2 = axios.CancelToken.source();
     axios
       .get(URL, {
+        headers: {
+          crossorigin: true,
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+          "Access-Control-Allow-Credentials": true,
+        },
         cancelToken: cancelToken2.token,
         params: { markdown: true, page: page + 1, params },
       })

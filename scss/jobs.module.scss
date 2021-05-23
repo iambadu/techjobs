@@ -70,7 +70,6 @@ padding: 15px;
 
 }
 .jwrap {
-  // border: 2px solid red;
   display: block;
   padding: 15px;
    @media (max-width: 768px) {
@@ -82,7 +81,9 @@ padding: 15px;
   background-color: #4B5563;
   color:#fff;
   font-weight: normal;
-  padding: 3px 8px;
+  padding: 5px 8px;
+  margin-top: 5px;
+  display:inline-block;
   border-radius:3px;
 }
 .nologo {
